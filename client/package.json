@@ -15,7 +15,8 @@
     "redux-promise-middleware": "*",
     "uuid-v4": "*",
     "prop-types": "*",
-    "classnames": "*"
+    "classnames": "*",
+    "bootstrap": "*"
   },
   "scripts": {
     "start": "react-scripts start",
