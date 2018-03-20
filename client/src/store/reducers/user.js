@@ -22,4 +22,8 @@ const userReducer = (state = initialState, { type, payload }) => {
   }
 }
 
+export const selectUser = (state, userID) => {
+  return state[userID];
+}
+
 export default userReducer;

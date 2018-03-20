@@ -2,8 +2,11 @@
 @import './base/variables';
 // Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap';
+// Global
+@import './base/global';
 // Modules
 
 // Templates
 @import './templates/main';
 // Pages
+@import './pages/users';

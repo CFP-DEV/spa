@@ -1,3 +1,36 @@
-$gray-100: #F4F4F4;
+// Colors
+$gray-100:                  #F4F4F4;
 
-$body-bg: $gray-100;
+$body-bg:                     $gray-100;
+
+// Fonts
+$font-family-sans-serif:      'Montserrat', sans-serif;
+
+$font-size-base:              1rem;
+
+$line-height-base:            1.8;
+
+$h1-font-size:                $font-size-base * 3;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.5;
+$h4-font-size:                $font-size-base * 1.125;
+$h5-font-size:                $font-size-base * 1;
+$h6-font-size:                $font-size-base * 0.875;
+
+$headings-margin-bottom:      0;
+$headings-font-weight:        400;
+$headings-line-height:        1.5;
+
+$lead-font-size:              $h5-font-size;
+$lead-font-weight:            400;
+
+// Spacing
+$spacer:                      20px;
+
+// Link
+$link-color:                  #343a40;
+$link-hover-color:            theme-color("primary");
+$link-hover-decoration:       none;
+
+// Grid
+$grid-gutter-width:           20px;

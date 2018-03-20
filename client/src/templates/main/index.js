@@ -1,32 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { fetchUsers } from '../../store/actions/user';
+import { Switch, Route } from 'react-router-dom';
 
-import Navigation from './components/Navigation';
+import UserTemplate from '../user/index';
 
 class Main extends Component {
-  componentDidMount() {
-    // Fetch Users
-    const { fetchUsers } = this.props;
-
-    fetchUsers();
-  }
-
   render () {
     return (
       <div className="main">
-        <Navigation />
-        Main Template
+        <div className="container">
+        
+        <Switch>
+          <Route path="/users" component={UserTemplate} />
+        </Switch>
+
+        </div>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchUsers: fetchUsers,
-  }, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(Main);
+export default Main;

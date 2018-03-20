@@ -1,0 +1,10 @@
+.users {
+  .user {
+    height: 200px;
+
+    &__avatar {
+      height: 120px;
+      width: 120px;
+    }
+  }
+}

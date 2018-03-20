@@ -23,6 +23,14 @@
       "address": "5551 Beechcrest Rd",
       "phone": "(544)-461-4474",
       "photoURL": "https://randomuser.me/api/portraits/women/33.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Chad Flores Twin",
+      "email": "chad.flores.twin73@example.com",
+      "address": "6401 Mockingbird Hill",
+      "phone": "(044)-431-1474",
+      "photoURL": "https://randomuser.me/api/portraits/men/1.jpg"
     }
   ]
 }
