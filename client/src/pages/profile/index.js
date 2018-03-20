@@ -58,7 +58,7 @@ class Profile extends Component {
     deleteUser(userID);
 
     // Redirect
-    this.props.history.replace('/users');
+    this.props.history.push('/users');
   }
 
   render () {

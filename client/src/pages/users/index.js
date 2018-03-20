@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import UserList from './components/UserList';
 
@@ -80,6 +81,13 @@ class Users extends Component {
             ? <UserList data={user.users} search={this.state.search} sort={this.state.sort} order={this.state.order} />
             : <Loading />
         }
+        <div className="row">
+          <div className="col-12">
+            <Link to="/users/new" className="btn btn-reset btn-primary">
+              Nowy Użytkownik
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }
