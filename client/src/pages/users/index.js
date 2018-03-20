@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
+import { fetchUsers } from '../../store/actions/user';
 
 import UserList from './components/UserList';
 
@@ -28,10 +30,16 @@ class Users extends Component {
     e.preventDefault();
   }
 
+  handleRefresh = (e) => {
+    e.preventDefault();
+    const { fetchUsers } = this.props;
+
+    // Fetch Users from the DB
+    fetchUsers();
+  }
+
   render () {
     const { user, isLoaded } = this.props;
-
-    console.log(isLoaded);
 
     return (
       <div className="users">
@@ -83,9 +91,12 @@ class Users extends Component {
         }
         <div className="row">
           <div className="col-12">
-            <Link to="/users/new" className="btn btn-reset btn-primary">
+            <Link to="/users/new" className="btn btn-primary">
               Nowy Użytkownik
             </Link>
+            <button className="btn btn-warning" onClick={this.handleRefresh}>
+              Refresh
+            </button>
           </div>
         </div>
       </div>
@@ -103,4 +114,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Users);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchUsers: fetchUsers,
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);
