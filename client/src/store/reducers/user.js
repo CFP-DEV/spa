@@ -16,6 +16,11 @@ const userReducer = (state = initialState, { type, payload }) => {
     case 'FETCH_USERS_REJECTED': {
       return {...state, isFetching: false, error: payload};
     }
+    case 'UPDATE_USER_FULFILLED': {
+      let updatedUsers = state.users.map(user => user.id === payload.id ? payload : user);
+
+      return {...state, users: updatedUsers}
+    }
     default: {
       return state;
     }
@@ -23,7 +28,7 @@ const userReducer = (state = initialState, { type, payload }) => {
 }
 
 export const selectUser = (state, userID) => {
-  return state[userID];
+  return state.filter(user => user.id === parseInt(userID, 10))[0];
 }
 
 export default userReducer;

@@ -1,34 +1,93 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { selectUser } from '../../store/reducers/user';
+import { updateUser } from '../../store/actions/user';
 
 class Profile extends Component {
+  state = { name: '', email: '', phone: '', address: '' }
+
+  componentDidMount() {
+    const { user } = this.props;
+    
+    if (user) {
+      this.setState({
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        address: user.address,
+      });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { user } = nextProps;
+
+    if (user) {
+      this.setState({
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        address: user.address,
+      });
+    }
+  }
+
+  handleChange = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { userID } = this.props.match.params;
+    const { updateUser } = this.props;
+
+    updateUser(userID, this.state);
+  }
+
   render () {
-    console.log(this.props.user);
     return (
       <div className="profile">
-        <div className="container">
-          <div className="row">
-            <div className="col-4">
-              Avatar
-              <button className="btn btn-reset btn-outline-primary w-100 mt-3 mb-1">
-                Edit
-              </button>
-              <button className="btn btn-reset btn-outline-danger w-100">
-                Remove
-              </button>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <div className="form-row">
+            <div className="form-group col-6">
+              <label htmlFor="name">
+                Imię i Nazwisko
+              </label>
+              <input type="text" className="form-control" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
             </div>
-            <div className="col-8">
-              <form className="form">
-                <div className="form-row">
-                  <div className="form-group">
-                    test
-                  </div>
-                </div>
-              </form>
+            <div className="form-group col-6">
+              <label htmlFor="email">
+                Adres E-mail
+              </label>
+              <input type="text" className="form-control" id="email" name="email" onChange={this.handleChange} value={this.state.email} />
             </div>
           </div>
-        </div>
+          <div className="form-row">
+            <div className="form-group col-6">
+              <label htmlFor="phone">
+                Numer Telefonu
+              </label>
+              <input type="text" className="form-control" id="phone" name="phone" onChange={this.handleChange} value={this.state.phone} />
+            </div>
+            <div className="form-group col-6">
+              <label htmlFor="address">
+                Adres
+              </label>
+              <input type="text" className="form-control" id="address" name="address" onChange={this.handleChange} value={this.state.address} />
+            </div>
+          </div>
+          <button type="submit" className="btn btn-reset btn-primary mr-3">
+            Zaktualizuj
+          </button>
+          <button type="button" className="btn btn-reset btn-danger">
+            Usuń
+          </button>
+        </form>
       </div>
     );
   }
@@ -43,4 +102,10 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)(Profile);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    updateUser: updateUser,
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
