@@ -11,14 +11,15 @@ class Main extends Component {
   render () {
     return (
       <div className="main">
-        <div className="container">
-          <Navigation />
-        
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/users" component={UserTemplate} />
-          </Switch>
+        <Navigation />
 
+        <div className="main-content">
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/users" component={UserTemplate} />
+            </Switch>
+          </div>
         </div>
       </div>
     );

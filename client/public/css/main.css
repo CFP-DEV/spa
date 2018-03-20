@@ -6491,11 +6491,25 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 .main {
-  height: 100vh; }
+  height: 100vh;
+  display: flex; }
   .main .navigation {
-    height: 100%;
-    width: 300px;
-    background: #e9ecef; }
+    height: 100vh;
+    width: 300px; }
+    .main .navigation .navigation-brand {
+      height: 60px;
+      width: 100%;
+      background: #007bff;
+      color: #fff; }
+    .main .navigation .navigation-menu {
+      width: 100%; }
+      .main .navigation .navigation-menu .navigation-category {
+        width: 100%; }
+      .main .navigation .navigation-menu .navigation-item {
+        height: 60px;
+        width: 100%; }
+  .main .main-content {
+    width: calc(100% - 300px); }
 
 .users .user {
   height: 200px; }

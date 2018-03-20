@@ -90,12 +90,12 @@ class Users extends Component {
             : <Loading />
         }
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 d-flex justify-content-between">
             <Link to="/users/new" className="btn btn-primary">
               Nowy Użytkownik
             </Link>
-            <button className="btn btn-warning" onClick={this.handleRefresh}>
-              Refresh
+            <button className="btn btn-warning text-white" onClick={this.handleRefresh}>
+              Reload
             </button>
           </div>
         </div>

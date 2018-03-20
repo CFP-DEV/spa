@@ -5,7 +5,7 @@ import { selectUser } from '../../store/reducers/user';
 import { updateUser, deleteUser } from '../../store/actions/user';
 
 class Profile extends Component {
-  state = { name: '', email: '', phone: '', address: '' }
+  state = { name: '', email: '', phone: '', address: '', alerts: [] }
 
   componentDidMount() {
     const { user } = this.props;

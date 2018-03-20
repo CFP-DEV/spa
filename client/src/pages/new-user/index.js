@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createUser } from '../../store/actions/user';
 
+import Alert from './components/Alert';
+
 class NewUser extends Component {
-  state = { name: '', email: '', phone: '', address: '' }
+  state = { name: '', email: '', phone: '', address: '', alerts: [] }
 
   handleChange = (e) => {
     e.preventDefault();
@@ -19,8 +21,16 @@ class NewUser extends Component {
     const { createUser } = this.props;
 
     if (this.state.name && this.state.email && this.state.phone && this.state.address) {
+      // User Object
+      let user = {
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        address: this.state.address
+      }
+
       // Create User
-      createUser(this.state);
+      createUser(user);
 
       // Clear Form
       this.setState({
@@ -28,14 +38,22 @@ class NewUser extends Component {
         email: '',
         phone: '',
         address: '',
+        alerts: [{ type: 'success', content: `Stworzyłeś użytkownika z nazwą ${user.name}.` }]
       });
+    } else {
+      this.setState({
+        alerts: [{type: 'warning', content: 'Wszystkie pola muszą zostać wypełnione'}],
+      })
     }
   }
 
   render () {
+    const alerts = this.state.alerts.map(alert => <Alert key={alert.content} data={alert} />)
+
     return (
       <div className="new-user">
         <form className="form" onSubmit={this.handleSubmit}>
+          { alerts }
           <div className="form-row">
             <div className="form-group col-12">
               <label htmlFor="name">
