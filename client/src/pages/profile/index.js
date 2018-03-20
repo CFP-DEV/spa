@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectUser } from '../../store/reducers/user';
-import { updateUser } from '../../store/actions/user';
+import { updateUser, deleteUser } from '../../store/actions/user';
 
 class Profile extends Component {
   state = { name: '', email: '', phone: '', address: '' }
@@ -49,6 +49,18 @@ class Profile extends Component {
     updateUser(userID, this.state);
   }
 
+  handleDelete = (e) => {
+    e.preventDefault();
+    const { userID } = this.props.match.params;
+    const { deleteUser } = this.props;
+    
+    // Delete User
+    deleteUser(userID);
+
+    // Redirect
+    this.props.history.replace('/users');
+  }
+
   render () {
     return (
       <div className="profile">
@@ -84,7 +96,7 @@ class Profile extends Component {
           <button type="submit" className="btn btn-reset btn-primary mr-3">
             Zaktualizuj
           </button>
-          <button type="button" className="btn btn-reset btn-danger">
+          <button type="button" className="btn btn-reset btn-danger" onClick={this.handleDelete}>
             Usuń
           </button>
         </form>
@@ -105,6 +117,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     updateUser: updateUser,
+    deleteUser: deleteUser,
   }, dispatch);
 }
 

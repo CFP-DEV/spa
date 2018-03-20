@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import UserList from './components/UserList';
 
+import Loading from '../../components/Loading';
+
 class Users extends Component {
   state = {search: '', sort: '', order: 'asc'}
 
@@ -26,7 +28,9 @@ class Users extends Component {
   }
 
   render () {
-    const { user } = this.props;
+    const { user, isLoaded } = this.props;
+
+    console.log(isLoaded);
 
     return (
       <div className="users">
@@ -71,7 +75,11 @@ class Users extends Component {
             </div>
             </div>
         </form>
-        <UserList data={user.users} search={this.state.search} sort={this.state.sort} order={this.state.order} />
+        {
+          !user.isLoaded 
+            ? <UserList data={user.users} search={this.state.search} sort={this.state.sort} order={this.state.order} />
+            : <Loading />
+        }
       </div>
     );
   }

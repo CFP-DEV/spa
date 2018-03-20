@@ -26,3 +26,34 @@ export function updateUser(userID, data) {
     .then(response => response.json()),
   }
 }
+
+export function deleteUser(userID) {
+  let request = `http://localhost:5000/users/${userID}`;
+
+  return {
+    type: 'DELETE_USER',
+    payload: fetch(request, { 
+      method: 'DELETE' 
+    })
+    .then(() => userID)
+  }
+}
+
+export function createUser(data) {
+  let request = 'http://localhost:5000/users';
+
+  return {
+    type: 'CREATE_USER',
+    payload: fetch(request, {
+      method: 'POST',
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        address: data.address
+      })
+    })
+    .then(response => response.json()),
+  }
+}

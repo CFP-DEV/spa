@@ -1,36 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Chad Flores X",
-      "email": "chad.flores73@example.com",
-      "address": "6401 Mockingbird Hill",
-      "phone": "(164)-933-9808",
-      "photoURL": "https://randomuser.me/api/portraits/men/1.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Chris S.",
-      "email": "chfrompoland@gmail.com",
-      "address": "1286 Werth Rd",
-      "phone": "(692)-230-49903241",
-      "photoURL": "https://randomuser.me/api/portraits/men/98.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Arianna Riverantetest",
-      "email": "arianna.riverante58@example.com",
-      "address": "5551 Beechcrest Rd",
-      "phone": "(544)-461-4474",
-      "photoURL": "https://randomuser.me/api/portraits/women/33.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Chad Flores Twin",
-      "email": "chad.flores.twin73@example.com",
-      "address": "6401 Mockingbird Hill",
-      "phone": "(044)-431-1474",
-      "photoURL": "https://randomuser.me/api/portraits/men/1.jpg"
+      "name": "test2",
+      "email": "test2",
+      "phone": "test2",
+      "address": "test2",
+      "id": 2
     }
   ]
 }

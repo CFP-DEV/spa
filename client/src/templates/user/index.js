@@ -8,6 +8,8 @@ import Users from '../../pages/users/index';
 
 import Profile from '../../pages/profile/index';
 
+import NewUser from '../../pages/new-user/index';
+
 class UserTemplate extends Component {
   componentDidMount() {
     // Fetch Users
@@ -20,6 +22,7 @@ class UserTemplate extends Component {
     return (
       <Switch>
         <Route exact path="/users" component={Users} />
+        <Route exact path="/users/new" component={NewUser} />
         <Route path="/users/:userID" component={Profile} />
       </Switch>
     );

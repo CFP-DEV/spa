@@ -21,6 +21,18 @@ const userReducer = (state = initialState, { type, payload }) => {
 
       return {...state, users: updatedUsers}
     }
+    case 'DELETE_USER_FULFILLED': {
+      let updatedUsers = state.users.map(user => {
+        if (user.id !== parseInt(payload, 10)) 
+          return user;
+      });
+
+      return { ...state, users: updatedUsers }
+    }
+    case 'CREATE_USER_FULFILLED': {
+      console.log(payload);
+      return { ...state, users: [...state.users, payload]}
+    }
     default: {
       return state;
     }
