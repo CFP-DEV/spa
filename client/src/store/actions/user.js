@@ -1,5 +1,6 @@
 export function fetchUsers() {
   let request = 'http://localhost:5000/users';
+  //let request = 'https://jsonplaceholder.typicode.com/users';
 
   return {
     type: 'FETCH_USERS',
@@ -10,6 +11,7 @@ export function fetchUsers() {
 
 export function updateUser(userID, data) {
   let request = `http://localhost:5000/users/${userID}`;
+  //let request = `https://jsonplaceholder.typicode.com/users/${userID}`;
 
   return {
     type: 'UPDATE_USER',
@@ -29,6 +31,7 @@ export function updateUser(userID, data) {
 
 export function deleteUser(userID) {
   let request = `http://localhost:5000/users/${userID}`;
+  //let request = `https://jsonplaceholder.typicode.com/users/${userID}`;
 
   return {
     type: 'DELETE_USER',
@@ -41,6 +44,7 @@ export function deleteUser(userID) {
 
 export function createUser(data) {
   let request = 'http://localhost:5000/users';
+  //let request = `https://jsonplaceholder.typicode.com/users/${userID}`;
 
   return {
     type: 'CREATE_USER',
