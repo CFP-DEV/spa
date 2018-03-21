@@ -13,7 +13,25 @@ const UserList = ({data, search, sort, order}) => {
 
   return (
     <div className="row">
-      { users.map(user => <User key={user.id} data={user} />) }
+      <div className="col-12">
+        <div className="table-responsive-xl">
+          <table className="table bg-white rounded">
+            <thead className="thead-light">
+              <tr>
+                <th>#</th>
+                <th>Imię i Nazwisko</th>
+                <th>E-mail</th>
+                <th>Numer Telefonu</th>
+                <th>Adres</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map(user => <User key={user.id} data={user} />)}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 }

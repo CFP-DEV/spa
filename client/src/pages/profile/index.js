@@ -64,15 +64,21 @@ class Profile extends Component {
   render () {
     return (
       <div className="profile">
-        <form className="form" onSubmit={this.handleSubmit}>
+        <button className="btn btn-link text-primary mb-3 p-0" onClick={() => { this.props.history.goBack(); }}>
+          <i className="fas fa-long-arrow-alt-left mr-2"></i>
+          Powrót
+        </button>
+        <form className="form p-3 bg-white" onSubmit={this.handleSubmit}>
           <div className="form-row">
-            <div className="form-group col-6">
+            <div className="form-group col-12">
               <label htmlFor="name">
                 Imię i Nazwisko
               </label>
               <input type="text" className="form-control" id="name" name="name" onChange={this.handleChange} value={this.state.name} />
             </div>
-            <div className="form-group col-6">
+          </div>
+          <div className="form-row">
+            <div className="form-group col-12">
               <label htmlFor="email">
                 Adres E-mail
               </label>
@@ -80,25 +86,29 @@ class Profile extends Component {
             </div>
           </div>
           <div className="form-row">
-            <div className="form-group col-6">
+            <div className="form-group col-12">
               <label htmlFor="phone">
                 Numer Telefonu
               </label>
               <input type="text" className="form-control" id="phone" name="phone" onChange={this.handleChange} value={this.state.phone} />
             </div>
-            <div className="form-group col-6">
+          </div>
+          <div className="form-row">
+            <div className="form-group col-12">
               <label htmlFor="address">
                 Adres
               </label>
               <input type="text" className="form-control" id="address" name="address" onChange={this.handleChange} value={this.state.address} />
             </div>
           </div>
-          <button type="submit" className="btn btn-reset btn-primary mr-3">
-            Zaktualizuj
-          </button>
-          <button type="button" className="btn btn-reset btn-danger" onClick={this.handleDelete}>
-            Usuń
-          </button>
+          <div className="d-flex justify-content-between">
+            <button type="submit" className="btn btn-reset btn-primary">
+              Zaktualizuj
+            </button>
+            <button type="button" className="btn btn-reset btn-danger" onClick={this.handleDelete}>
+              <i className="fas fa-trash-alt"></i>
+            </button>
+          </div>
         </form>
       </div>
     );

@@ -6490,26 +6490,19 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
-.main {
-  height: 100vh;
-  display: flex; }
-  .main .navigation {
-    height: 100vh;
-    width: 300px; }
-    .main .navigation .navigation-brand {
-      height: 60px;
-      width: 100%;
-      background: #007bff;
-      color: #fff; }
-    .main .navigation .navigation-menu {
-      width: 100%; }
-      .main .navigation .navigation-menu .navigation-category {
-        width: 100%; }
-      .main .navigation .navigation-menu .navigation-item {
-        height: 60px;
-        width: 100%; }
-  .main .main-content {
-    width: calc(100% - 300px); }
+.btn {
+  height: 40px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px; }
+
+.form .form-group label {
+  font-size: 14px; }
+
+.main .navigation {
+  height: 80px;
+  width: 100%; }
 
 .users .user {
   height: 200px; }

@@ -52,7 +52,11 @@ class NewUser extends Component {
 
     return (
       <div className="new-user">
-        <form className="form" onSubmit={this.handleSubmit}>
+        <button className="btn btn-link text-primary mb-3 p-0" onClick={() => { this.props.history.goBack(); }}>
+          <i className="fas fa-long-arrow-alt-left mr-2"></i>
+          Powrót
+        </button>
+        <form className="form p-3 bg-white" onSubmit={this.handleSubmit}>
           { alerts }
           <div className="form-row">
             <div className="form-group col-12">

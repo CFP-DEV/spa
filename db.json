@@ -1,46 +1,25 @@
 {
   "users": [
     {
-      "name": "test123",
-      "email": "test123",
-      "phone": "test123",
-      "address": "test123",
+      "name": "Clyde Davidson",
+      "email": "clyde.davidson15@example.com",
+      "phone": "(130)-746-8293",
+      "address": "4853 Eighth St",
       "id": 6
     },
     {
-      "name": "t",
-      "email": "x",
-      "phone": "d",
-      "address": "a",
+      "name": "Lance Robertson",
+      "email": "lance.robertson65@example.com",
+      "phone": "(944)-936-2024",
+      "address": "1506 Woodland St",
       "id": 7
     },
     {
-      "name": "t",
-      "email": "t",
-      "phone": "t",
-      "address": "t",
+      "name": "Deanna Herrera",
+      "email": "deanna.herrera37@example.com",
+      "phone": "(206)-939-8692",
+      "address": "4382 Camp St",
       "id": 8
-    },
-    {
-      "name": "Chris S.",
-      "email": "chfrompoland@gmail.com",
-      "phone": "321 3104 39218",
-      "address": "ul. Rojna 29, Łódź",
-      "id": 9
-    },
-    {
-      "name": "Nowy",
-      "email": "nowy@nwoy.pl",
-      "phone": "321 1 5143 ",
-      "address": "fsd fsdf fsdf",
-      "id": 10
-    },
-    {
-      "name": "xd",
-      "email": "xd",
-      "phone": "xd",
-      "address": "xd",
-      "id": 11
     }
   ]
 }

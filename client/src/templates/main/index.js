@@ -13,7 +13,7 @@ class Main extends Component {
       <div className="main">
         <Navigation />
 
-        <div className="main-content">
+        <div className="main-content pt-5 pb-5">
           <div className="container">
             <Switch>
               <Route exact path="/" component={Home} />

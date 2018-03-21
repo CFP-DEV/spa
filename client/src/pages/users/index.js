@@ -39,20 +39,18 @@ class Users extends Component {
   }
 
   render () {
-    const { user, isLoaded } = this.props;
+    const { user } = this.props;
 
     return (
       <div className="users">
-        <div className="row">
+        <div className="row mb-3">
           <div className="col-12">
-            <header>
-              <h2>Użytkownicy</h2>
-            </header>
+            <h2>Użytkownicy</h2>
           </div>
         </div>
         <form className="form" onSubmit={this.handleSubmit}>
           <div className="form-row">
-            <div className="form-group col-6">
+            <div className="form-group col-12 col-sm-6">
               <label htmlFor="search">
                 Szukaj
               </label>
@@ -63,7 +61,7 @@ class Users extends Component {
                     onChange={this.handleChange}
                     value={this.state.search} />
             </div>
-            <div className="form-group col-6">
+            <div className="form-group col-12 col-sm-6">
               <label htmlFor="sort">
                 Sortuj
               </label>
@@ -85,9 +83,7 @@ class Users extends Component {
             </div>
         </form>
         {
-          !user.isLoaded 
-            ? <UserList data={user.users} search={this.state.search} sort={this.state.sort} order={this.state.order} />
-            : <Loading />
+          <UserList data={user.users} search={this.state.search} sort={this.state.sort} order={this.state.order} />
         }
         <div className="row">
           <div className="col-12 d-flex justify-content-between">
@@ -95,7 +91,7 @@ class Users extends Component {
               Nowy Użytkownik
             </Link>
             <button className="btn btn-warning text-white" onClick={this.handleRefresh}>
-              Reload
+              <i className="fas fa-sync-alt"></i>
             </button>
           </div>
         </div>
