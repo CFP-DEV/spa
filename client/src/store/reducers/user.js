@@ -36,7 +36,9 @@ const userReducer = (state = initialState, { type, payload }) => {
 }
 
 export const selectUser = (state, userID) => {
-  return state.filter(user => user.id === parseInt(userID, 10))[0];
+  let result = state.filter(user => user.id === parseInt(userID, 10))[0];
+
+  return result ? result : false;
 }
 
 export default userReducer;

@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <div className="navigation navbar navbar-expand-lg navbar-light bg-white">
+    <nav className="navigation navbar navbar-expand-md navbar-light bg-white">
       <div className="container">
         <div className="navbar-brand">
           SPA
         </div>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar m-0 p-0 h-100 list-unstyled">
+
+        <button className="navbar-toggler border-0 text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i className="fas fa-bars"></i>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav">
             <li className="nav-item h6">
               <Link className="nav-link" to="/">
                 Strona Główna
@@ -23,7 +28,7 @@ const Navigation = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

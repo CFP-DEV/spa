@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Redirect } from 'react-router-dom';
 import { selectUser } from '../../store/reducers/user';
 import { updateUser, deleteUser } from '../../store/actions/user';
 
@@ -70,6 +71,10 @@ class Profile extends Component {
   }
 
   render () {
+    if (this.props.user === false) {
+      return <Redirect to="/users" />;
+    }
+
     return (
       <div className="profile">
         <button className="btn btn-link text-primary mb-3 p-0" onClick={() => { this.props.history.goBack(); }}>

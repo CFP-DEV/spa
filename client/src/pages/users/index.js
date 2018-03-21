@@ -6,8 +6,6 @@ import { fetchUsers } from '../../store/actions/user';
 
 import UserList from './components/UserList';
 
-import Loading from '../../components/Loading';
-
 class Users extends Component {
   state = {search: '', sort: '', order: 'asc'}
 

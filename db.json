@@ -24,9 +24,9 @@
     {
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "phone": "(321) 31 51 94324",
-      "address": "ul. Rojna 29, Łódź",
-      "id": 10
+      "phone": "(321) 321-43-3145",
+      "address": "95-070, Rojna 29",
+      "id": 9
     }
   ]
 }
