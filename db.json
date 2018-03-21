@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "name": "Clyde Davidson",
+      "name": "Clyde Davidsonn",
       "email": "clyde.davidson15@example.com",
       "phone": "(130)-746-8293",
       "address": "4853 Eighth St",
@@ -20,6 +20,13 @@
       "phone": "(206)-939-8692",
       "address": "4382 Camp St",
       "id": 8
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "(321) 31 51 94324",
+      "address": "ul. Rojna 29, Łódź",
+      "id": 10
     }
   ]
 }

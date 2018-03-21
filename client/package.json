@@ -13,7 +13,6 @@
     "redux-logger": "*",
     "redux-thunk": "*",
     "redux-promise-middleware": "*",
-    "uuid-v4": "*",
     "prop-types": "*",
     "classnames": "*",
     "bootstrap": "*"

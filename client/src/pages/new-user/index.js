@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createUser } from '../../store/actions/user';
 
-import Alert from './components/Alert';
+import Alert from '../../components/Alert';
 
 class NewUser extends Component {
   state = { name: '', email: '', phone: '', address: '', alerts: [] }
@@ -48,7 +48,7 @@ class NewUser extends Component {
   }
 
   render () {
-    const alerts = this.state.alerts.map(alert => <Alert key={alert.content} data={alert} />)
+    const alerts = this.state.alerts.map(alert => <Alert key={alert.content} type={alert.type}>{alert.content}</Alert>)
 
     return (
       <div className="new-user">

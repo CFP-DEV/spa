@@ -4,8 +4,10 @@ import { bindActionCreators } from 'redux';
 import { selectUser } from '../../store/reducers/user';
 import { updateUser, deleteUser } from '../../store/actions/user';
 
+import Alert from '../../components/Alert';
+
 class Profile extends Component {
-  state = { name: '', email: '', phone: '', address: '', alerts: [] }
+  state = { name: '', email: '', phone: '', address: '', alert: undefined }
 
   componentDidMount() {
     const { user } = this.props;
@@ -46,7 +48,13 @@ class Profile extends Component {
     const { userID } = this.props.match.params;
     const { updateUser } = this.props;
 
+    // Update User
     updateUser(userID, this.state);
+
+    // Show Alert
+    this.setState({
+      alert: <Alert type="success">{`Edycja użytkownika ${this.state.name} zakończona sukcesem.`}</Alert>,
+    })
   }
 
   handleDelete = (e) => {
@@ -69,6 +77,7 @@ class Profile extends Component {
           Powrót
         </button>
         <form className="form p-3 bg-white" onSubmit={this.handleSubmit}>
+          { this.state.alert }
           <div className="form-row">
             <div className="form-group col-12">
               <label htmlFor="name">
