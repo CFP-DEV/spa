@@ -6,6 +6,8 @@ import { fetchUsers } from '../../store/actions/user';
 
 import UserList from './components/UserList';
 
+import Loading from '../../components/Loading';
+
 class Users extends Component {
   state = {search: '', sort: '', order: 'asc'}
 
@@ -37,7 +39,7 @@ class Users extends Component {
   }
 
   render () {
-    const { user } = this.props;
+    const { user, isLoaded } = this.props;
 
     return (
       <div className="users">
@@ -81,7 +83,7 @@ class Users extends Component {
             </div>
         </form>
         {
-          <UserList data={user.users} search={this.state.search} sort={this.state.sort} order={this.state.order} />
+          isLoaded ? <UserList data={user.users} search={this.state.search} sort={this.state.sort} order={this.state.order} /> : <Loading />
         }
         <div className="row">
           <div className="col-12 d-flex justify-content-between">

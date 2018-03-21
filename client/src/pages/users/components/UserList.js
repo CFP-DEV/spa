@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import User from './User';
 
@@ -16,6 +17,13 @@ const UserList = ({data, search, sort, order}) => {
       { users.map(user => <User key={user.id} data={user} />) }
     </div>
   );
+}
+
+UserList.propTypes = {
+  data: PropTypes.array,
+  search: PropTypes.string,
+  sort: PropTypes.string,
+  order: PropTypes.string,
 }
 
 export default UserList;
