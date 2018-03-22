@@ -6,7 +6,7 @@ import { createUser } from '../../store/actions/user';
 import Alert from '../../components/Alert';
 
 class NewUser extends Component {
-  state = { name: '', email: '', phone: '', address: '', alerts: [] }
+  state = { name: '', email: '', phone: '', website: '', alerts: [] }
 
   handleChange = (e) => {
     e.preventDefault();
@@ -20,13 +20,13 @@ class NewUser extends Component {
     e.preventDefault();
     const { createUser } = this.props;
 
-    if (this.state.name && this.state.email && this.state.phone && this.state.address) {
+    if (this.state.name && this.state.email && this.state.phone && this.state.website) {
       // User Object
       let user = {
         name: this.state.name,
         email: this.state.email,
         phone: this.state.phone,
-        address: this.state.address
+        website: this.state.website
       }
 
       // Create User
@@ -37,7 +37,7 @@ class NewUser extends Component {
         name: '',
         email: '',
         phone: '',
-        address: '',
+        website: '',
         alerts: [{ type: 'success', content: `Stworzyłeś użytkownika z nazwą ${user.name}.` }]
       });
     } else {
@@ -84,10 +84,10 @@ class NewUser extends Component {
           </div>
           <div className="form-row">
             <div className="form-group col-12">
-              <label htmlFor="address">
-                Adres Zamieszkania
+              <label htmlFor="website">
+                Strona
               </label>
-              <input type="text" className="form-control" id="address" name="address" onChange={this.handleChange} value={this.state.address} />
+              <input type="text" className="form-control" id="website" name="website" onChange={this.handleChange} value={this.state.website} />
             </div>
           </div>
           <button className="btn btn-reset btn-primary">

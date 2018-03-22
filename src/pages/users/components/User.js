@@ -28,7 +28,7 @@ User.propTypes = {
     name: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     phone: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
+    website: PropTypes.string.isRequired,
   }),
 }
 

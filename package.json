@@ -1,16 +1,26 @@
 {
-  "name": "spa-server",
-  "version": "1.0.0",
-  "description": "Fake REST API",
-  "main": "index.js",
-  "scripts": {
-    "server": "json-server --watch db.json --port 5000",
-    "client": "cd client && npm start",
-    "install": "npm update && cd client && npm update"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "json-server": "*"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1",
+    "react-router": "*",
+    "react-router-dom": "*",
+    "redux": "*",
+    "react-redux": "*",
+    "redux-logger": "*",
+    "redux-thunk": "*",
+    "redux-promise-middleware": "*",
+    "prop-types": "*",
+    "classnames": "*",
+    "bootstrap": "*"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

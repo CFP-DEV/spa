@@ -8,7 +8,7 @@ import { updateUser, deleteUser } from '../../store/actions/user';
 import Alert from '../../components/Alert';
 
 class Profile extends Component {
-  state = { name: '', email: '', phone: '', address: '', alert: undefined }
+  state = { name: '', email: '', phone: '', website: '', alert: undefined }
 
   componentDidMount() {
     const { user } = this.props;
@@ -18,7 +18,7 @@ class Profile extends Component {
         name: user.name,
         email: user.email,
         phone: user.phone,
-        address: user.address,
+        website: user.website,
       });
     }
   }
@@ -31,7 +31,7 @@ class Profile extends Component {
         name: user.name,
         email: user.email,
         phone: user.phone,
-        address: user.address,
+        website: user.website,
       });
     }
   }
@@ -109,10 +109,10 @@ class Profile extends Component {
           </div>
           <div className="form-row">
             <div className="form-group col-12">
-              <label htmlFor="address">
-                Adres
+              <label htmlFor="website">
+                Strona
               </label>
-              <input type="text" className="form-control" id="address" name="address" onChange={this.handleChange} value={this.state.address} />
+              <input type="text" className="form-control" id="website" name="website" onChange={this.handleChange} value={this.state.website} />
             </div>
           </div>
           <div className="d-flex justify-content-between">
